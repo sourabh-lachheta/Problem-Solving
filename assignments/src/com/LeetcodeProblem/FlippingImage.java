@@ -19,7 +19,7 @@ public class FlippingImage {
                 start++;
                 end--;
             }
-            
+
 
 
         }
