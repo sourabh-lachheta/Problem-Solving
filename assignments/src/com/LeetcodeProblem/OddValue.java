@@ -9,7 +9,7 @@ public class OddValue {
         int[][] indices ={{0,1},{1,1}};
 
       int ans = oddCells(m, n,indices);
-      System.out.print(Arrays.deepToString(ans));
+      System.out.print(Arrays.deepToString(new Integer[]{ans}));
     }
 
 
