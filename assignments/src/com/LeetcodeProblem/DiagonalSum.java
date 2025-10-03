@@ -6,12 +6,12 @@ public class DiagonalSum {
         getresult(nums);
     }
     static int getresult(int[][] nums){
-        for(int i = 0; i < nums.length; i++){
-            for(int j = 0; j < nums[i].length; j++){
-                if(i % 2 == 0){
-                    int sum = sum + nums[i][j];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int value = row[i] + col[j];
+                if (value % 2 != 0) {
+                    oddCount++;
                 }
             }
-        }
     }
 }
