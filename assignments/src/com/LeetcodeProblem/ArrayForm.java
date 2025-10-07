@@ -15,20 +15,28 @@ public class ArrayForm {
 
     static List<Integer> getresult(int[] nums, int k){
 
+       // int s = (int) Math.pow(10, nums.length-1);
         int s = (int) Math.pow(10, nums.length-1);
+        if (s < 0) s = Integer.MAX_VALUE; // overflow check
+        System.out.println(s);
+
 
         int c = 0;
         for(int i = 0; i < nums.length; i++){
-            c = c + (nums[i] * s);
+
+            c = c + ( nums[i] * s);
             if(nums[i] != 0) {
                 s = s / 10;
             }
             if(i == nums.length -1){
                 c = c + k;
             }
+
         }
+
+        if (c < 0) c = Integer.MAX_VALUE;
         System.out.println(c);
-         return getAns(c);
+       return getAns(c);
 
     }
 
