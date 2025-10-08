@@ -13,42 +13,23 @@ public class ArrayForm {
     }
 
 
-    static List<Integer> getresult(int[] nums, int k){
+    static List<Integer> getresult(int[] A, int K){
+        int N = A.length;
+        int cur = K;
+        List<Integer> ans = new ArrayList<>();
 
-       // int s = (int) Math.pow(10, nums.length-1);
-        int s = (int) Math.pow(10, nums.length-1);
-        if (s < 0) s = Integer.MAX_VALUE; // overflow check
-        System.out.println(s);
-
-
-        int c = 0;
-        for(int i = 0; i < nums.length; i++){
-
-            c = c + ( nums[i] * s);
-            if(nums[i] != 0) {
-                s = s / 10;
-            }
-            if(i == nums.length -1){
-                c = c + k;
-            }
-
+        int i = N;
+        while (--i >= 0 || cur > 0) {
+            if (i >= 0)
+                cur += A[i];
+            ans.add(cur % 10);
+            cur /= 10;
         }
 
-        if (c < 0) c = Integer.MAX_VALUE;
-        System.out.println(c);
-       return getAns(c);
-
+        Collections.reverse(ans);
+        return ans;
     }
 
-    static List<Integer> getAns(int c){
-        List<Integer> list = new ArrayList<>();
-        while(c > 0){
-            int a = c % 10;
-            list.add(a);
-            c = c /10;
-        }
-        Collections.reverse(list);
-        return list;
-    }
+
 
 }
